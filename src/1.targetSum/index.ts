@@ -8,7 +8,6 @@
  */
 
 function getTwoSumIndex(nums: Array<number>, targetSum: number) {
-    debugger
     let result = null;
     if (!nums || nums.length < 2) {
         return result;
@@ -31,6 +30,28 @@ function getTwoSumIndex(nums: Array<number>, targetSum: number) {
     return result;
 }
 
+function getTwoSumIndex2(nums: Array<number>, targetSum: number) {
+    debugger
+    let result = null;
+    if (!nums || nums.length < 2) {
+        return result;
+    }
+
+    const hashMap = new Map();
+    let length = nums.length;
+    for (let i = 0; i < length; i++) {
+        const num = targetSum - nums[i];
+        if (hashMap.get(num) && i != hashMap.get(num)) {
+            result = [i, hashMap.get(num)];
+            break;
+        }
+        hashMap.set(nums[i], i);
+    }
+
+    return result;
+}
+
 export {
-    getTwoSumIndex
+    getTwoSumIndex,
+    getTwoSumIndex2
 }
