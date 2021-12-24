@@ -46,7 +46,6 @@ describe('getTwoSumIndex2: Get two number index:', () => {
         const arr = [1, 2, 3, 4, 5 , 6, 7, 8];
         const result = getTwoSumIndex2(arr, 13);
         let sum = 0;
-        debugger
         if (result) {
             console.log(result);
             sum = arr[result[0]] + arr[result[1]];

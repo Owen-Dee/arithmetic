@@ -31,7 +31,6 @@ function getTwoSumIndex(nums: Array<number>, targetSum: number) {
 }
 
 function getTwoSumIndex2(nums: Array<number>, targetSum: number) {
-    debugger
     let result = null;
     if (!nums || nums.length < 2) {
         return result;
