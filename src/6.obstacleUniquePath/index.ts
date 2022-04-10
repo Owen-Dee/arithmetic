@@ -28,23 +28,23 @@ function obstacleUniquePath(obstacleGrid: Array<Array<number>>) {
     }
 
     const dp: Array<Array<number>> = [];
-    const xLength = obstacleGrid.length;
-    const yLength = obstacleGrid[0].length;
-    for (let i = 0; i < xLength; i++) {
+    const m = obstacleGrid.length; // 行数
+    const n = obstacleGrid[0].length; // 列数
+    for (let i = 0; i < m; i++) {
         dp[i] = [];
-        for (let j = 0; j < yLength; j++) {
+        for (let j = 0; j < n; j++) {
             dp[i][j] = 0;
         }
     }
-    for (let i = 0; i < xLength && obstacleGrid[i][0] === 0; i++) {
+    for (let i = 0; i < m && obstacleGrid[i][0] === 0; i++) {
         dp[i][0] = 1;
     }
-    for (let j = 0; j < yLength && obstacleGrid[0][j] === 0; j++) {
+    for (let j = 0; j < n && obstacleGrid[0][j] === 0; j++) {
         dp[0][j] = 1;
     }
 
-    for (let i = 1; i < xLength; i++) {
-        for (let j = 1; j < yLength; j++) {
+    for (let i = 1; i < m; i++) {
+        for (let j = 1; j < n; j++) {
             if (obstacleGrid[i][j] === 1) { // 如果遇到障碍物,就跳过去
                 continue;
             }
@@ -57,7 +57,7 @@ function obstacleUniquePath(obstacleGrid: Array<Array<number>>) {
     console.log(dp);
     console.log('**************dp**************');
 
-    return dp[xLength - 1][yLength - 1];
+    return dp[m - 1][n - 1];
 }
 
 export {
