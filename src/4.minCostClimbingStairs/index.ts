@@ -20,7 +20,6 @@
  */
 
 function getMinCostClimbingStairs(costs: Array<number>) {
-    debugger
     if (!costs || costs.length <= 2) {
         return null;
     }

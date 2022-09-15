@@ -10,14 +10,12 @@ function sum() {
 function curry(fn: Function) {
     let allArgs = [];
     return function next() {
-        debugger
         console.log(`this1: ${this}`);
         const args = Array.prototype.slice.call(arguments);
         if (args.length > 0) {
             allArgs = allArgs.concat(args);
             return next;
         } else {
-            debugger
             console.log(`this2: ${this}`);
             return fn.apply(this, allArgs);
         }

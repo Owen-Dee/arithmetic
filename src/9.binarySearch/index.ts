@@ -2,7 +2,6 @@ function binarySearch(arrs: number[], target: number) {
     if (!arrs || arrs.length === 0) {
         return -1;
     }
-    debugger
     let left = 0;
     let right = arrs.length - 1;
     while(left <= right) {
