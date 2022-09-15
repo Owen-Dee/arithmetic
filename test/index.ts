@@ -8,5 +8,8 @@
 // import './7.stock/index2'
 // import './7.stock/index3'
 // import './7.stock/index4'
-import './7.stock/index5'
+// import './7.stock/index5'
 // import './7.stock/index6'
+// import './8.curring/index';
+// import './6.obstacleUniquePath/uniquePath';
+import './9.binarySearch/index';

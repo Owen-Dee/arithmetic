@@ -36,6 +36,23 @@ function getStockMaxValue(prices: number[]) {
     return dp[length - 1][1];
 }
 
+function getStockMaxMoney(prices: number[]) {
+    if (!prices || prices.length === 0) {
+        return 0;
+    }
+
+    const length = prices.length;
+    const dp = Array.from(Array(length), () => Array(2).fill(0));
+    dp[0][0] = -prices[0];
+    dp[0][1] = 0;
+    for (let i = 1; i < length; i++) {
+        dp[i][0] = Math.max(dp[i - 1][0], - prices[i]);
+        dp[i][1] = Math.max(dp[i - 1][1], dp[i - 1][0] + prices[i]);
+    }
+
+    return Math.max(dp[length - 1][0], dp[length - 1][1]);
+}
+
 export {
     getStockMaxValue
 }
@@ -54,7 +71,7 @@ export {
 
 //     const length = 0;
 //     const dp = [];
-//     dp[0][0] = -prices[0];
+//     dp[0][0] = -prices[0]; // 这样写有问题
 //     dp[0][1] = 0;
 //     for (let i = 1; i < length; i++) {
 //         dp[i][0] = Math.max(dp[i -1][0], - prices[i]);

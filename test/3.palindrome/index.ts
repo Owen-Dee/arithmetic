@@ -3,6 +3,7 @@ import { palindrome } from '../../src/3.palindrome';
 
 describe('1.Test palindrome', () => {
     it('1.abac', () => {
+        debugger
         const str = 'abac';
         const res = palindrome(str);
         console.log(`result: ${res}`);
